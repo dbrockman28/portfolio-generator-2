@@ -47,13 +47,6 @@ const mockData = {
   ]
 };
 
-// const pageHTML = generatePage(name, github);
-
-// fs.writeFile("index.html", generatePage(name, github), err => {
-//   if (err) throw new Error(err);
-
-//   console.log("Portfolio complete! Check out the index.html file to see the output.")
-// });
 const promptUser = () => {
   return inquirer.prompt([
     {
@@ -181,9 +174,9 @@ promptUser()
   .then(portfolioData => {
     const pageHTML = generatePage(mockData);
 
-    // fs.writeFile('./index.html', pageHTML, err => {
-    //   if (err) throw new Error(err);
+    fs.writeFile('./index.html', pageHTML, err => {
+      if (err) throw new Error(err);
 
-    //   console.log('Page created! Check out index.html in this directory to see it!');
-    // });
+      console.log('Page created! Check out index.html in this directory to see it!');
+    });
   });
